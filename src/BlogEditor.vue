@@ -34,6 +34,7 @@
   
   <style scoped>
   .editor {
+    padding: 5px;
     display: flex;
     flex-direction: column;
   }

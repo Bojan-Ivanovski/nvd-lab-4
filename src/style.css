@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+}
+
+button,input,fieldset{
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 5px;
+}
+
+textarea{
+    font-family: sans-serif;
+}
+
+fieldset{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+ul div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}   
+
+ul li{
+    padding: 20px;
+    gap: 10px;
+    border: 2px solid black;
+    list-style: none;
+    display: flex;
+}

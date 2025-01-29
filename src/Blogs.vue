@@ -9,16 +9,18 @@
         <label for="content">By Content</label>
     </fieldset>
     <ul v-if="!isLoading">
-      <li v-for="blog in filteredBlogs" :key="blog.id">
-        <img v-if="blog.heroImage" class="thumbnail" :src="`${blog.heroImage.fields.file.url}?fit=scale&w=350&h=196`" />
-        <div class="article-text">
-        <div class="date">
-            {{ new Date(blog.publishDate).toDateString() }}
-        </div>
-        <h4>{{ blog.title }}</h4>
-        <p>{{ blog.description }}</p>
-        </div>
-      </li>
+      <div>
+        <li v-for="blog in filteredBlogs" :key="blog.id">
+          <img v-if="blog.heroImage" class="thumbnail" :src="`${blog.heroImage.fields.file.url}?fit=scale&w=350&h=196`" />
+          <div class="article-text">
+          <div class="date">
+              {{ new Date(blog.publishDate).toDateString() }}
+          </div>
+          <h4>{{ blog.title }}</h4> 
+          <p>{{ blog.description }}</p>
+          </div>
+        </li>
+      </div>
     </ul>
     <p v-else>Loading blogs...</p>
     <p v-if="error">{{ error }}</p>
@@ -26,7 +28,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits, ref, watch } from "vue";
+import { ref, watch } from "vue";
 import { useSearch } from "./useSearch";
 
 const props = defineProps({
